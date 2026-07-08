@@ -100,5 +100,243 @@
       "Beyblade en airblade combos vereisen oefening in practice tool."
     ],
     "stats": { "damage": 3, "toughness": 1, "control": 2, "mobility": 3, "utility": 1 }
+  },
+  {
+    "id": "lux",
+    "name": "Lux",
+    "title": "the Lady of Luminosity",
+    "role": "Mage",
+    "lane": "Mid",
+    "difficulty": "Makkelijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lux.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg",
+    "description": "Lux is een long-range mage met sterke poke, crowd control en een execute ultimate van ver.",
+    "tips": [
+      "Combineer Light Binding (Q) met Lucent Singularity (E) voor gegarandeerde damage.",
+      "Final Spark (R) heeft een lange range — gebruik hem om kills te securen in andere lanes.",
+      "Warding met Prismatic Barrier (W) beschermt jezelf én je teammate bij all-ins."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 2, "mobility": 1, "utility": 2 }
+  },
+  {
+    "id": "caitlyn",
+    "name": "Caitlyn",
+    "title": "the Sheriff of Piltover",
+    "role": "Marksman",
+    "lane": "Bot",
+    "difficulty": "Gemiddeld",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Caitlyn.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg",
+    "description": "Caitlyn domineert de lane met haar lange range en sterke trap-setup voor picks.",
+    "tips": [
+      "Plaats Yordle Snap Traps (W) achter minions of in choke points voor free auto's.",
+      "Headshot (passive) op gevangen vijanden geeft extra burst damage.",
+      "Ace in the Hole (R) is ideaal om te securen of een terugtrekkende vijand af te maken."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 2, "mobility": 1, "utility": 1 }
+  },
+  {
+    "id": "garen",
+    "name": "Garen",
+    "title": "the Might of Demacia",
+    "role": "Fighter",
+    "lane": "Top",
+    "difficulty": "Makkelijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Garen.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg",
+    "description": "Garen is een tanky top laner die simpele trades wint en vijanden executeert met zijn ult.",
+    "tips": [
+      "Activeer Decisive Strike (Q) vlak voor je raakt voor extra damage en silence.",
+      "Couragious (passive) regenereert HP buiten combat — speel agressief en val terug.",
+      "Demacian Justice (R) doet true damage — ideaal tegen tanky tops."
+    ],
+    "stats": { "damage": 2, "toughness": 3, "control": 1, "mobility": 1, "utility": 1 }
+  },
+  {
+    "id": "lulu",
+    "name": "Lulu",
+    "title": "the Fae Sorceress",
+    "role": "Support",
+    "lane": "Bot",
+    "difficulty": "Gemiddeld",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Lulu.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg",
+    "description": "Lulu is een enchanter support die carries beschermt, bufft en vijanden omver polst.",
+    "tips": [
+      "Wild Growth (R) op een diving carry kan teamfights volledig omdraaien.",
+      "Help, Pix! (E) op je ADC vergroot damage; op een vijand vertraagt het.",
+      "Polymorph (W) onderbreekt channels en dashes — bewaar hem voor assassins."
+    ],
+    "stats": { "damage": 2, "toughness": 1, "control": 2, "mobility": 1, "utility": 3 }
+  },
+  {
+    "id": "zed",
+    "name": "Zed",
+    "title": "the Master of Shadows",
+    "role": "Assassin",
+    "lane": "Mid",
+    "difficulty": "Moeilijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Zed.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg",
+    "description": "Zed is een AD assassin die met shadows outplayt en squishy targets elimineert.",
+    "tips": [
+      "Death Mark (R) + Shadow Slash combo is je main burst — oefen de timing.",
+      "Living Shadow (W) kan als escape of engage dienen; kies bewust.",
+      "Gebruik Ignite vóór je ult pop voor maximale kill pressure."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 1, "mobility": 3, "utility": 1 }
+  },
+  {
+    "id": "vi",
+    "name": "Vi",
+    "title": "the Piltover Enforcer",
+    "role": "Fighter",
+    "lane": "Jungle",
+    "difficulty": "Gemiddeld",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Vi.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg",
+    "description": "Vi is een engage jungler met een onstuitbare ultimate en sterke gank potential.",
+    "tips": [
+      "Vault Breaker (Q) charge tijd bepaalt range en stun duration — max charge voor picks.",
+      "Cease and Desist (R) lockt een target — communiceer je target voor teamfights.",
+      "Relentless Force (E) reset auto's snel voor snellere clear en extra burst."
+    ],
+    "stats": { "damage": 2, "toughness": 2, "control": 2, "mobility": 2, "utility": 1 }
+  },
+  {
+    "id": "ezreal",
+    "name": "Ezreal",
+    "title": "the Prodigal Explorer",
+    "role": "Marksman",
+    "lane": "Bot",
+    "difficulty": "Gemiddeld",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ezreal.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg",
+    "description": "Ezreal is een skillshot ADC met sterke poke, mobility en safe farming op afstand.",
+    "tips": [
+      "Mystic Shot (Q) verlaagt cooldowns — hit minions om sneller abilities te spammen.",
+      "Arcane Shift (E) is je escape; gebruik hem niet agressief tenzij je zeker bent.",
+      "Trueshot Barrage (R) kan globaal assists pakken of wave clearen van ver."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 1, "mobility": 3, "utility": 1 }
+  },
+  {
+    "id": "leona",
+    "name": "Leona",
+    "title": "the Radiant Dawn",
+    "role": "Tank",
+    "lane": "Bot",
+    "difficulty": "Makkelijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Leona.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg",
+    "description": "Leona is een all-in engage support met lange CC chains en hoge frontline tankiness.",
+    "tips": [
+      "Zenith Blade (E) + Shield of Daybreak (Q) geeft een snelle stun chain.",
+      "Solar Flare (R) center stun is langer — aim voor de middelste zone.",
+      "Wedge tussen vijand en carry met Eclipse (W) voor maximale peel."
+    ],
+    "stats": { "damage": 1, "toughness": 3, "control": 3, "mobility": 1, "utility": 1 }
+  },
+  {
+    "id": "kaisa",
+    "name": "Kai'Sa",
+    "title": "Daughter of the Void",
+    "role": "Marksman",
+    "lane": "Bot",
+    "difficulty": "Gemiddeld",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Kaisa.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kaisa_0.jpg",
+    "description": "Kai'Sa is een hybrid ADC die evolueert en met ults in en uit fights kan draaien.",
+    "tips": [
+      "Stack Plasma (passive) met allies' CC voor een krachtige detonatie.",
+      "Killer Instinct (R) geeft een shield — gebruik hem om damage te absorberen.",
+      "Evolueer abilities door item builds aan te passen aan de game state."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 1, "mobility": 3, "utility": 1 }
+  },
+  {
+    "id": "malphite",
+    "name": "Malphite",
+    "title": "Shard of the Monolith",
+    "role": "Tank",
+    "lane": "Top",
+    "difficulty": "Makkelijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Malphite.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg",
+    "description": "Malphite is een AP/AD tank met een game-changing teamfight ultimate en lane sustain.",
+    "tips": [
+      "Unstoppable Force (R) op meerdere vijanden wint teamfights — wacht op de juiste moment.",
+      "Granite Shield (passive) komt terug na ability gebruik — trade en back off.",
+      "Seismic Shard (Q) slowt en geeft move speed — gebruik het om te kiteren of te chasen."
+    ],
+    "stats": { "damage": 2, "toughness": 3, "control": 2, "mobility": 1, "utility": 1 }
+  },
+  {
+    "id": "katarina",
+    "name": "Katarina",
+    "title": "the Sinister Blade",
+    "role": "Assassin",
+    "lane": "Mid",
+    "difficulty": "Moeilijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Katarina.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg",
+    "description": "Katarina is een AP assassin die met resets teamfights opruimt als niemand haar stopt.",
+    "tips": [
+      "Pick up daggers voor Shunpo (E) resets — positionering is cruciaal.",
+      "Death Lotus (R) kan gechanneld worden; zorg dat je niet geïnterrupt wordt.",
+      "Roame naar bot na level 6 voor snowball potential met je ult."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 1, "mobility": 3, "utility": 1 }
+  },
+  {
+    "id": "nami",
+    "name": "Nami",
+    "title": "the Tidecaller",
+    "role": "Support",
+    "lane": "Bot",
+    "difficulty": "Gemiddeld",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Nami.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg",
+    "description": "Nami is een enchanter support met heals, buffs en krachtige engage/disengage met haar ult.",
+    "tips": [
+      "Ebb and Flow (W) bounces tussen allies en enemies — sta dicht bij beide voor max value.",
+      "Aqua Prison (Q) is moeilijk te raken — leid met auto's of wacht op CC van teammates.",
+      "Tidal Wave (R) kan teamfights starten of een retreat veilig maken."
+    ],
+    "stats": { "damage": 1, "toughness": 1, "control": 3, "mobility": 1, "utility": 3 }
+  },
+  {
+    "id": "camille",
+    "name": "Camille",
+    "title": "the Steel Shadow",
+    "role": "Fighter",
+    "lane": "Top",
+    "difficulty": "Moeilijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Camille.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg",
+    "description": "Camille is een splitpush specialist met true damage, hooks en een single-target lockdown ult.",
+    "tips": [
+      "Hookshot (E) stun op walls geeft lange CC — oefen de angles.",
+      "The Hextech Ultimatum (R) isoleert carries — dive alleen als je team follow-up heeft.",
+      "Precision Protocol (Q) second auto doet true damage — timing is key."
+    ],
+    "stats": { "damage": 3, "toughness": 2, "control": 2, "mobility": 3, "utility": 1 }
+  },
+  {
+    "id": "orianna",
+    "name": "Orianna",
+    "title": "the Lady of Clockwork",
+    "role": "Mage",
+    "lane": "Mid",
+    "difficulty": "Moeilijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Orianna.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg",
+    "description": "Orianna is een control mage met ball placement, team buffs en een devastating shockwave ult.",
+    "tips": [
+      "Houd je ball positie in gedachten — Command: Shockwave (R) trekt naar de ball.",
+      "Command: Protect (E) op een diving ally brengt de ball mee naar de fight.",
+      "Command: Dissonance (W) geeft speed boost — gebruik voor kiting of engages."
+    ],
+    "stats": { "damage": 2, "toughness": 1, "control": 3, "mobility": 1, "utility": 2 }
   }
 ]
