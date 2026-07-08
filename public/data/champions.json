@@ -1,0 +1,104 @@
+[
+  {
+    "id": "ahri",
+    "name": "Ahri",
+    "title": "the Nine-Tailed Fox",
+    "role": "Mage",
+    "lane": "Mid",
+    "difficulty": "Gemiddeld",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Ahri.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
+    "description": "Ahri is een mobiele mage die charm en burst damage combineert. Ze excelleert in pick-potential en skirmishes.",
+    "tips": [
+      "Gebruik Charm (E) vóór je ult om gegarandeerd te raken.",
+      "Bewaar Spirit Rush (R) voor escapes of om een kill te securen.",
+      "Farm veilig met Orb of Deception (Q) van op afstand."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 2, "mobility": 3, "utility": 1 }
+  },
+  {
+    "id": "jinx",
+    "name": "Jinx",
+    "title": "the Loose Cannon",
+    "role": "Marksman",
+    "lane": "Bot",
+    "difficulty": "Makkelijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Jinx.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg",
+    "description": "Jinx is een hypercarry ADC met sterke teamfight potential dankzij haar rockets en global ultimate.",
+    "tips": [
+      "Wissel tussen minigun en rockets af op basis van de situatie.",
+      "Gebruik Flame Chompers (E) om ganks te blokkeren.",
+      "Reset met Get Excited! (passive) na kills om te repositioneren."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 1, "mobility": 1, "utility": 1 }
+  },
+  {
+    "id": "leesin",
+    "name": "Lee Sin",
+    "title": "the Blind Monk",
+    "role": "Fighter",
+    "lane": "Jungle",
+    "difficulty": "Moeilijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/LeeSin.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg",
+    "description": "Lee Sin is een mechanisch zware jungler met hoge early-game impact en outplay-potential.",
+    "tips": [
+      "Oefen ward-hop combos voor snelle engages.",
+      "Gebruik Sonic Wave (Q) pas als je zeker bent van de follow-up.",
+      "Dragon's Rage (R) kan een vijand in je team stoten."
+    ],
+    "stats": { "damage": 3, "toughness": 2, "control": 2, "mobility": 3, "utility": 1 }
+  },
+  {
+    "id": "thresh",
+    "name": "Thresh",
+    "title": "the Chain Warden",
+    "role": "Support",
+    "lane": "Bot",
+    "difficulty": "Gemiddeld",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Thresh.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg",
+    "description": "Thresh is een playmaking support met hooks, peels en lantern-saves voor zijn ADC.",
+    "tips": [
+      "Lantern (W) plaatst een escape voor je carry — communiceer wanneer je hem gooit.",
+      "Death Sentence (Q) is krachtig maar riskant — mis niet te vaak.",
+      "Flay (E) kan vijanden naar je toe trekken of wegduwen."
+    ],
+    "stats": { "damage": 1, "toughness": 3, "control": 3, "mobility": 1, "utility": 3 }
+  },
+  {
+    "id": "darius",
+    "name": "Darius",
+    "title": "the Hand of Noxus",
+    "role": "Fighter",
+    "lane": "Top",
+    "difficulty": "Makkelijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Darius.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg",
+    "description": "Darius domineert lane trades en executeert vijanden met zijn ult bij volle passive stacks.",
+    "tips": [
+      "Stack Hemorrhage (passive) met auto's en Decimate (Q).",
+      "Apprehend (E) cancelt dashes en trekt vijanden terug.",
+      "Noxian Guillotine (R) reset bij kills — ga agressief voor resets."
+    ],
+    "stats": { "damage": 3, "toughness": 2, "control": 1, "mobility": 1, "utility": 1 }
+  },
+  {
+    "id": "yasuo",
+    "name": "Yasuo",
+    "title": "the Unforgiven",
+    "role": "Fighter",
+    "lane": "Mid",
+    "difficulty": "Moeilijk",
+    "image": "https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/Yasuo.png",
+    "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg",
+    "description": "Yasuo is een skill-expressie champion met windwall, outplays en teamfight knock-ups.",
+    "tips": [
+      "Wind Wall (W) blokkeert projectiles — timing is alles.",
+      "Zoek knock-ups van teammates voor Last Breath (R).",
+      "Beyblade en airblade combos vereisen oefening in practice tool."
+    ],
+    "stats": { "damage": 3, "toughness": 1, "control": 2, "mobility": 3, "utility": 1 }
+  }
+]
