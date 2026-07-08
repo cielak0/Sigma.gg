@@ -1,6 +1,6 @@
 # Verslag — Front-end Framework Keuzedeel
 
-**Student:** [Naam invullen]  
+**Student:** Bartek Ciesielski  
 **Project:** Sigma.GG  
 **Framework:** Vue 3  
 **Datum:** 8 juli 2026
