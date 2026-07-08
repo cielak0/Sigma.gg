@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Verslag — Front-end Framework Keuzedeel</title>
+  <style>
+    @page { margin: 2cm; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+      font-size: 11pt;
+    }
+    h1 { font-size: 22pt; border-bottom: 2px solid #2563eb; padding-bottom: 8px; }
+    h2 { font-size: 16pt; margin-top: 28px; color: #1e40af; }
+    h3 { font-size: 13pt; margin-top: 20px; }
+    p { margin: 8px 0; }
+    p.numbered { margin-left: 0; }
+    ul { margin: 8px 0 8px 20px; }
+    li { margin: 4px 0; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 10pt; }
+    th, td { border: 1px solid #ccc; padding: 8px 10px; text-align: left; }
+    th { background: #eff6ff; font-weight: 600; }
+    a { color: #2563eb; text-decoration: none; }
+    strong { font-weight: 600; }
+  </style>
+</head>
+<body>
+<h1>Verslag — Front-end Framework Keuzedeel</h1>
+<p><strong>Student:</strong> [Naam invullen]  </p>
+<p><strong>Project:</strong> Sigma.GG  </p>
+<p><strong>Framework:</strong> Vue 3  </p>
+<p><strong>Datum:</strong> 8 juli 2026</p>
+<hr>
+<h2>1. Inleiding</h2>
+<p>Voor het keuzedeel <em>Front-end Framework</em> moest ik een front-end framework onderzoeken, een beredeneerde keuze maken en een werkende website bouwen en publiceren op GitHub Pages. Ik heb gekozen voor een League of Legends champion-gids: <strong>Sigma.GG</strong>. De site laat spelers champions bekijken, filteren, tips lezen en favorieten opslaan.</p>
+<p>Het doel van dit project is drieledig:</p>
+<p class="numbered">1. Frameworks vergelijken en een onderbouwde keuze maken.</p>
+<p class="numbered">2. Een functionele multi-page website bouwen met routing, componenten en data uit JSON.</p>
+<p class="numbered">3. Professioneel documenteren en publiceren via GitHub Pages.</p>
+<p>De website bevat vijf pagina's (Home, Champions, Champion detail, Favorieten, Over), minimaal vier herbruikbare componenten, en voldoet aan de eisen voor toegankelijkheid en statische hosting zonder back-end.</p>
+<hr>
+<h2>2.1 Keuzeproces</h2>
+<h3>Onderzoeksvragen</h3>
+<ul>
+<li>Welk framework past het best bij een statische site met meerdere pagina's en componenten?</li>
+<li>Hoe groot is de leercurve en documentatie voor een MBO-student?</li>
+<li>Hoe goed werkt het framework met GitHub Pages (build + deploy)?</li>
+</ul>
+<h3>Vergelijkingscriteria</h3>
+<table>
+<tr><th>Leercurve</th><th>Hoog</th><th>Moet binnen de projecttijd beheersbaar zijn</th></tr>
+<tr><td>Documentatie</td><td>Hoog</td><td>Duidelijke docs en voorbeelden</td></tr>
+<tr><td>Componenten &amp; routing</td><td>Hoog</td><td>SPA met meerdere views</td></tr>
+<tr><td>GitHub Pages compatibiliteit</td><td>Hoog</td><td>Statische build, geen server-side code</td></tr>
+<tr><td>Populariteit / arbeidsmarkt</td><td>Middel</td><td>Relevant voor stage en werk</td></tr>
+<tr><td>Bundle-grootte / performance</td><td>Middel</td><td>Snelle laadtijd op Pages</td></tr>
+</table>
+<h3>Frameworks vergeleken</h3>
+<p>#### Vue 3</p>
+<ul>
+<li><strong>Voordelen:</strong> Progressieve opbouw, duidelijke documentatie, Single File Components (.vue), officiële router (Vue Router), Vite als snelle build tool.</li>
+<li><strong>Nadelen:</strong> Minder corporate adoptie dan React in sommige bedrijven.</li>
+<li><strong>GitHub Pages:</strong> Uitstekend — `npm run build` levert statische `dist/` map.</li>
+</ul>
+<p>#### React</p>
+<ul>
+<li><strong>Voordelen:</strong> Grootste ecosystem, veel tutorials en vacatures, JSX is flexibel.</li>
+<li><strong>Nadelen:</strong> Meer boilerplate (React Router apart installeren), hooks/state management voelt abstracter voor beginners.</li>
+<li><strong>GitHub Pages:</strong> Goed — Create React App of Vite + React werkt statisch.</li>
+</ul>
+<p>#### Svelte</p>
+<ul>
+<li><strong>Voordelen:</strong> Weinig boilerplate, compiler-gebaseerd, kleine bundle.</li>
+<li><strong>Nadelen:</strong> Kleinere community dan Vue/React, minder leermateriaal in het Nederlands.</li>
+<li><strong>GitHub Pages:</strong> Goed — SvelteKit of Vite + Svelte.</li>
+</ul>
+<h3>Conclusie keuzeproces</h3>
+<p>Na vergelijking scoren Vue 3 en React het hoogst. Vue wint op leercurve en integratie (router + officiële tooling) voor een compact schoolproject zonder back-end.</p>
+<hr>
+<h2>2.2 Keuze</h2>
+<p><strong>Gekozen framework: Vue 3</strong> met Vue Router en Vite.</p>
+<hr>
+<h2>2.3 Onderbouwing</h2>
+<p class="numbered">1. <strong>Leercurve:</strong> Vue's template-syntax lijkt op HTML en is voor mij als beginnende front-end developer het meest toegankelijk. De Composition API (`script setup`) houdt logica overzichtelijk per component.</p>
+<p class="numbered">2. <strong>Documentatie:</strong> De <a href="https://vuejs.org/">officiële Vue-docs</a> zijn helder, met interactieve voorbeelden en een duidelijke guide voor routing en componenten.</p>
+<p class="numbered">3. <strong>Projecteisen:</strong> Vue Router dekt routing (5 pagina's). Componenten zoals `NavBar`, `ChampionCard` en `SearchBar` zijn herbruikbaar. JSON-data laadt via `fetch()` uit `public/data/champions.json`.</p>
+<p class="numbered">4. <strong>GitHub Pages:</strong> Vite bouwt een statische site. Hash-routing (`createWebHashHistory`) voorkomt 404-problemen op GitHub Pages zonder server-configuratie.</p>
+<p class="numbered">5. <strong>Toegankelijkheid:</strong> Semantische tags (`header`, `main`, `nav`, `article`), alt-teksten op afbeeldingen, ARIA-labels op knoppen en zoekvelden.</p>
+<p class="numbered">6. <strong>Arbeidsmarkt:</strong> Vue wordt veel gebruikt in webshops, dashboards en interne tools. React is groter, maar Vue biedt een betere balans tussen leerbaarheid en professionele output voor dit project.</p>
+<p><strong>Alternatief afgewezen:</strong> React — krachtiger ecosystem, maar meer setup en abstractie voor hetzelfde eindresultaat binnen de beschikbare tijd.</p>
+<hr>
+<h2>Reflectie</h2>
+<p>Het bouwen met Vue 3 verliep vlot dankzij Vite (snelle hot reload) en duidelijke componentstructuur. De grootste uitdaging was GitHub Pages configureren (juiste `base` path en hash-router). Voor een vervolgproject zou ik GitHub Actions toevoegen voor automatische deploy na elke push.</p>
+<hr>
+<h2>Bronvermelding</h2>
+<ul>
+<li>Vue.js. (2026). <em>Documentation</em>. https://vuejs.org/</li>
+<li>Vue Router. (2026). <em>Documentation</em>. https://router.vuejs.org/</li>
+<li>Vite. (2026). <em>Documentation</em>. https://vite.dev/</li>
+<li>Riot Games. (2026). <em>Data Dragon</em>. https://developer.riotgames.com/docs/lol</li>
+<li>React. (2026). <em>Documentation</em>. https://react.dev/</li>
+<li>Svelte. (2026). <em>Documentation</em>. https://svelte.dev/</li>
+</ul>
+</body>
+</html>
