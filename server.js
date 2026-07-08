@@ -1,103 +1,148 @@
 const express = require('express');
-const fetch = require('node-fetch');
 const dotenv = require('dotenv');
-const path = require('path');
 const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 const API_KEY = process.env.RIOT_API_KEY;
 
-// Enable CORS for frontend (e.g., localhost:8080)
 app.use(cors());
 
-// Serve static files from /public (HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, 'public')));
+const regionCluster = {
+    BR1: 'americas',
+    EUN1: 'europe',
+    EUW1: 'europe',
+    JP1: 'asia',
+    KR: 'asia',
+    LA1: 'americas',
+    LA2: 'americas',
+    NA1: 'americas',
+    OC1: 'sea',
+    TR1: 'europe',
+    RU: 'europe',
+    PH2: 'sea',
+    SG2: 'sea',
+    TH2: 'sea',
+    TW2: 'sea',
+    VN2: 'sea'
+};
 
-// Get Riot account by gameName + tagLine
-app.get('/api/account/:gameName/:tagLine', async (req, res) => {
-    const { gameName, tagLine } = req.params;
+// Get Riot ID
+app.get('/api/account/:region/:gameName/:tagLine', async (req, res) => {
+    const {region, gameName, tagLine} = req.params;
+    const cluster = regionCluster[region];
+
+    if (!cluster) return res.status(400).json({error: 'Invalid region for account lookup'});
 
     try {
-        const accountRes = await fetch(`https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(gameName)}/${encodeURIComponent(tagLine)}?api_key=${API_KEY}`);
+        const accountRes = await fetch(
+            `https://${cluster}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(gameName)}/${encodeURIComponent(tagLine)}?api_key=${API_KEY}`
+        );
 
         if (!accountRes.ok) {
-            return res.status(accountRes.status).json({ error: "Account not found" });
+            return res.status(accountRes.status).json({error: 'Account not found'});
         }
 
         const accountData = await accountRes.json();
         res.json({
-            gameName: gameName,
-            tagLine: tagLine,
+            gameName,
+            tagLine,
             puuid: accountData.puuid
         });
     } catch (err) {
-        console.error("Error fetching account:", err);
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.error('Error fetching account:', err);
+        res.status(500).json({error: 'Internal Server Error'});
     }
 });
 
-// 🔧 Get summoner data by puuid (this was missing before)
-app.get('/api/summoner/:puuid', async (req, res) => {
-    const puuid = req.params.puuid;
+// Get summoner data
+app.get('/api/summoner/:region/:puuid', async (req, res) => {
+    const {region, puuid} = req.params;
 
     try {
-        const response = await fetch(`https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${puuid}`, {
-            headers: {
-                "X-Riot-Token": API_KEY
-            }
-        });
+        const response = await fetch(
+            `https://${region}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${puuid}`,
+            {headers: {'X-Riot-Token': API_KEY}}
+        );
 
         if (!response.ok) {
-            return res.status(response.status).json({ error: "Summoner not found" });
+            return res.status(response.status).json({error: 'Summoner not found'});
         }
 
         const data = await response.json();
         res.json(data);
     } catch (err) {
-        console.error("Error fetching summoner data:", err);
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.error('Error fetching summoner data:', err);
+        res.status(500).json({error: 'Internal Server Error'});
     }
 });
 
-// Get last 5 matches by puuid
-app.get('/api/matches/:puuid', async (req, res) => {
-    const puuid = req.params.puuid;
+// Ranked league entries (Solo/Flex etc.) — requires encrypted summoner id from summoner v4
+app.get('/api/league/:region/:encryptedSummonerId', async (req, res) => {
+    const {region, encryptedSummonerId} = req.params;
 
     try {
-        const idsRes = await fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=10&api_key=${API_KEY}`);
+        const response = await fetch(
+            `https://${region}.api.riotgames.com/lol/league/v4/entries/by-summoner/${encodeURIComponent(encryptedSummonerId)}`,
+            {headers: {'X-Riot-Token': API_KEY}}
+        );
+
+        if (!response.ok) {
+            if (response.status === 404) return res.json([]);
+            return res.status(response.status).json({error: 'Could not fetch league'});
+        }
+
+        const data = await response.json();
+        res.json(Array.isArray(data) ? data : []);
+    } catch (err) {
+        console.error('Error fetching league:', err);
+        res.status(500).json({error: 'Failed to fetch league'});
+    }
+});
+
+// Get last 20 matches
+app.get('/api/matches/:region/:puuid', async (req, res) => {
+    const {region, puuid} = req.params;
+    const cluster = regionCluster[region];
+
+    if (!cluster) return res.status(400).json({error: 'Invalid region for match history'});
+
+    try {
+        const idsRes = await fetch(
+            `https://${cluster}.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=${API_KEY}`
+        );
 
         if (!idsRes.ok) {
-            return res.status(idsRes.status).json({ error: "Could not get match IDs" });
+            return res.status(idsRes.status).json({error: 'Could not get match IDs'});
         }
 
         const matchIds = await idsRes.json();
 
         const matchData = await Promise.all(
-            matchIds.map(id =>
-                fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/${id}?api_key=${API_KEY}`)
-                    .then(r => r.json())
-            )
+            matchIds.map(async id => {
+                try {
+                    const r = await fetch(
+                        `https://${cluster}.api.riotgames.com/lol/match/v5/matches/${id}?api_key=${API_KEY}`
+                    );
+                    if (!r.ok) {
+                        console.warn(`Skipping match ${id} (status ${r.status})`);
+                        return null;
+                    }
+                    const data = await r.json();
+                    return data?.info ? data : null;
+                } catch (err) {
+                    console.error(`Error fetching match ${id}:`, err);
+                    return null;
+                }
+            })
         );
 
-        res.json(matchData);
+        res.json(matchData.filter(m => m !== null));
     } catch (err) {
-        console.error("Error fetching matches:", err);
-        res.status(500).json({ error: 'Failed to fetch matches' });
-    }
-});
-
-// Get latest League of Legends version
-app.get('/api/version', async (req, res) => {
-    try {
-        const response = await fetch('https://ddragon.leagueoflegends.com/api/versions.json');
-        const versions = await response.json();
-        res.json({ version: versions[0] }); // send latest version
-    } catch (err) {
-        console.error("Error fetching version:", err);
-        res.status(500).json({ error: 'Failed to fetch version' });
+        console.error('Error fetching matches:', err);
+        res.status(500).json({error: 'Failed to fetch matches'});
     }
 });
 
