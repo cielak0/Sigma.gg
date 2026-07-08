@@ -12,7 +12,9 @@ const loading = ref(true);
 const error = ref('');
 
 const roles = computed(() => {
-  const unique = new Set(champions.value.map((champion) => champion.role));
+  const unique = [...new Set(champions.value.map((champion) => champion.role))].sort((a, b) =>
+    a.localeCompare(b, 'nl', { sensitivity: 'base' })
+  );
   return ['Alle', ...unique];
 });
 

@@ -5,7 +5,8 @@ export async function fetchChampions() {
   if (!response.ok) {
     throw new Error('Champions konden niet worden geladen.');
   }
-  return response.json();
+  const champions = await response.json();
+  return champions.sort((a, b) => a.name.localeCompare(b.name, 'nl', { sensitivity: 'base' }));
 }
 
 export async function fetchChampionById(id) {
